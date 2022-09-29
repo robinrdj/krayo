@@ -36,7 +36,7 @@ function App() {
   
   // fetching files
   useEffect(()=>{
-    db.collection(`files`).orderBy("timestamp","desc").onSnapshot(snapshot=>{
+    db.collection(`${userEmail}`).orderBy("timestamp","desc").onSnapshot(snapshot=>{
       setFiles(snapshot.docs.map(doc=>({
       id:doc.id,
       post:doc.data()
@@ -157,14 +157,15 @@ return (
         <Button onClick={signInWithGoogle}>Sign In With Google</Button>
         </div>
         </div>
-        {user?.displayName?( <FileUpload userName={user.displayName} />):<div className='sorry__message__container'><h3 className='sorry__message'>Sorry, U have to login to upload.</h3></div>}
-        <div className="app__posts">
+        {user?.displayName?( <FileUpload userName={user.displayName} email={userEmail}/>):<div className='sorry__message__container'><h3 className='sorry__message'>Sorry, U have to login to upload.</h3></div>}
+        {user?.displayName? <div className="app__posts">
         {
          files.map(({id,post})=>(
         <File  key={id} fileId={id} user={user} userName={post.userName}  fileUrl ={post.fileUrl} fileName={post.fileName} timeStamp={post.timestamp}/>
         ))
         }
-    </div>
+       </div>:""}
+       
   </div>
 )
 }

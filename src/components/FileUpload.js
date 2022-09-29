@@ -6,7 +6,7 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import "./FileUpload.css";
 
-function FileUpload({userName}) {
+function FileUpload({userName, email}) {
     const [file,setFile] = useState(null);
     const [progress,setProgress]= useState(0);
     const [isUploaded, setIsUploaded] = useState(true);
@@ -57,7 +57,7 @@ function handleUpload(){
   () => {
     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
     console.log('File available at', downloadURL);
-    db.collection("files").add({
+    db.collection(`${email}/`).add({
     timestamp:firebase.firestore.FieldValue.serverTimestamp(),
     fileUrl:downloadURL,
     userName:userName,

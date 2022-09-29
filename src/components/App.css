@@ -11,7 +11,6 @@
     flex-direction: column;
 }
 .app__Header{
-    /* object-fit: contain; */
     position: sticky;
     top: 0;
     z-index: 1;
@@ -47,16 +46,13 @@
     margin-top: 10px;
 }
 
-
 .sorry__message__container{
    padding: 50px;
    background-color: #f2f7fb;
    margin-left: 0px;
 }
 .sorry__message{
-
     text-align: center;
-
 }
 
 .sign__box{
