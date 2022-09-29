@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
+
+.file{
+    max-width: 1000px;
+    background-color: white;
+    border: 1px solid lightgray;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+.file__header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.file__header>h3{
+    font-family: 'Anonymous Pro', monospace;
+}
+.file__header>h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.file__avatar{
+    margin-right: 5px;
+}
+
+.file__link{
+    margin-left: 30px;
+}

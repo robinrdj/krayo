@@ -1,0 +1,27 @@
+.fileUpload{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-top: 1px solid lightgray;
+}
+
+.fileUpload__button__align>button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.fileUpload>input{
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.fileUpload__button__align{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
